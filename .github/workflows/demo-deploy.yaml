@@ -7,7 +7,7 @@ jobs:
   buildImage:
     runs-on: ubuntu-latest
     steps:
-      #- uses: actions/checkout@v3
+      - uses: actions/checkout@v3
       - name: ls -a 
         run: |
           ls && echo "zrq" > ./1.txt && cat ./1.txt
