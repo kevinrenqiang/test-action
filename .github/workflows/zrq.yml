@@ -1,19 +1,28 @@
-#workflow的名称
-name: CI/CD
-#触发器push
-on: push
-#job
+#工作流名称
+name: Build and deploy an app to AKS
+#触发器
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+#环境变量
+#env:
+  #AZURE_CONTAINER_REGISTRY: "your-azure-container-registry"
+#具体jobs
 jobs:
-  build:
-    name: My Job
+  #第一个job的名称
+  buildImage:
+    #权限
+    permissions:
+      contents: read
+      id-token: write
+    #runner指定github自己的runner
     runs-on: ubuntu-latest
+    #job的具体步骤
     steps:
-    - name: Print a greeting
-      env:
-        MY_VAR: Hi there! My name is
-        FIRST_NAME: Zhang
-        MIDDLE_NAME: Ren
-        LAST_NAME: qiang
-      run: |
-        echo $MY_VAR $FIRST_NAME $MIDDLE_NAME $LAST_NAME.
-      run: ls
+      #检查是否拉取了源码
+      - uses: actions/checkout@v3
+      #j步骤1的名称
+      - name: list all 
+        run: |
+          ls
