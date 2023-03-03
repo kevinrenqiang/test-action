@@ -14,7 +14,7 @@ jobs:
         run: mvn -B package --file pom.xml
 
       - name: docker build
-        run: docker build -t runoob/ubuntu:v1 . 
+        run: docker pull java:8 && docker build -t runoob/ubuntu:v1 . 
   
       - name: test
         run: ls &&docker images
