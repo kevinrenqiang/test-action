@@ -7,7 +7,13 @@ jobs:
   buildImage:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - name: ls -a 
+      - name: pull 
+        uses: actions/checkout@v3
+     
+      - name: mvn package
         run: |
-          mvn clean package && ls 
+          mvn clean package
+
+      - name: docker build
+        run: docker version
+      
