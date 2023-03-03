@@ -15,5 +15,5 @@ jobs:
           mvn clean package
 
       - name: docker build
-        run: docker version
+        run: cd ./target && docker build -f ../dockerfile 
       
