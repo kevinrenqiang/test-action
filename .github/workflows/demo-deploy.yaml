@@ -14,7 +14,7 @@ jobs:
         run: mvn -B package --file pom.xml
 
       - name: docker login
-        run: docker login --username=天有多云 --password 'zhang!@12345' registry.cn-chengdu.aliyuncs.com
+        run: docker login --username=天有 registry.cn-chengdu.aliyuncs.com
 
       - name: docker build
         run: docker build -t   registry.cn-chengdu.aliyuncs.com/kevinz123/zrq-github:${{ github.sha }} .
