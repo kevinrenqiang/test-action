@@ -1,29 +1,14 @@
-#工作流名称
 name: demo-devops
-#触发器
 on:
   push:
     branches: ["main"]
   workflow_dispatch:
-#环境变量
-#env:
-  #AZURE_CONTAINER_REGISTRY: "your-azure-container-registry"
-#具体jobs
 jobs:
-  #第一个job的名称
-  job1_buildImage:
-    #权限
-    permissions:
-      contents: read
-      id-token: write
-    #runner指定github自己的runner
+  buildImage:
     runs-on: ubuntu-latest
-    #job的具体步骤
     steps:
-      #检查是否拉取了源码
       #- uses: actions/checkout@v3
-      #job步骤1的名称
-      - name: job1_step1_list all 
+      - name: ls -a 
         run: |
           ls
 
