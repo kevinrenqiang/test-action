@@ -1,5 +1,5 @@
 #名称
-name: Greeting from Mona
+name: CI/CD
 #触发器push
 on: push
 #job
