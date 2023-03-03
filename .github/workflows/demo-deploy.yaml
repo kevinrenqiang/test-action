@@ -10,10 +10,8 @@ jobs:
       - name: pull 
         uses: actions/checkout@v3
      
-      - name: mvn package
-        run: |
-          mvn clean package
-
-      - name: docker build
-        run: cd ./target && docker build -f ../dockerfile 
-      
+      - name: Build with Maven
+        run: mvn -B package --file pom.xml
+  
+      - name: test
+        run: ls
