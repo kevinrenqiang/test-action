@@ -4,7 +4,7 @@ on:
     branches: ["main"]
   workflow_dispatch:
 jobs:
-  buildImage:
+  CI:
     runs-on: ubuntu-latest
     steps:
       - name: pull 
@@ -24,3 +24,8 @@ jobs:
 
       - name: test
         run: ls &&docker images
+  CD:
+    runs-on: ubuntu-latest
+    steps:
+      - name: start cd 
+        run: echo "start cd"
