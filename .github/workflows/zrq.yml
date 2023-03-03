@@ -1,0 +1,18 @@
+#名称
+name: Greeting from Mona
+#触发器push
+on: push
+#job
+jobs:
+  build:
+    name: My Job
+    runs-on: ubuntu-latest
+    steps:
+    - name: Print a greeting
+      env:
+        MY_VAR: Hi there! My name is
+        FIRST_NAME: Zhang
+        MIDDLE_NAME: Ren
+        LAST_NAME: qiang
+      run: |
+        echo $MY_VAR $FIRST_NAME $MIDDLE_NAME $LAST_NAME.
