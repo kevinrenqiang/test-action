@@ -1,5 +1,5 @@
  ## 基础镜像java
- FROM java:8
+ FROM openjdk:8
  ## 作者是zrq
  MAINTAINER zrq
  ## 就是你上传的jar包的名称。给jar包起个别名
