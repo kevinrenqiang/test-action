@@ -1,5 +1,5 @@
 #!/bin/bash
-
+run_time=`date "+%s"`
 git add .
-git commit -m "v1"
-git push 
+git commit -m "$run_time"
+#git push 
