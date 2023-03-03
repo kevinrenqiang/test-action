@@ -6,8 +6,8 @@ on:
     branches: ["main"]
   workflow_dispatch:
 #环境变量
-env:
-  AZURE_CONTAINER_REGISTRY: "your-azure-container-registry"
+#env:
+  #AZURE_CONTAINER_REGISTRY: "your-azure-container-registry"
 #具体jobs
 jobs:
   #第一个job的名称
