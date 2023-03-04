@@ -10,4 +10,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name:  test zrq env
-      run:  echo ${{ secrets.ZRQ }}
+      run:  echo ${{ secrets.ZRQ }} > 1.txt && cat 1.txt
