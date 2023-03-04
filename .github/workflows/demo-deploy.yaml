@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name:  test zrq env
-      run: echo ZRQTEST
+      run: echo $ZRQTEST
 
     - name: 'Az CLI login'
       uses: azure/login@v1
