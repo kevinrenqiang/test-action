@@ -11,8 +11,9 @@ jobs:
     steps:
  
     - name: testzrq
-      run: echo ${{ secrets.AZURE_CLIENT_ID }} && echo ${{ secrets.AZURE_TENANT_ID }}&&echo ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-     
+     # run: echo ${{ secrets.AZURE_CLIENT_ID }} && echo ${{ secrets.AZURE_TENANT_ID }}&&echo ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+      run : az version     
+
     - name: 'Az CLI login'
       uses: azure/login@v1
       with:
