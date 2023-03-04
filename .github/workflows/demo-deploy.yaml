@@ -8,6 +8,8 @@ permissions:
 jobs: 
   build-and-deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: NO-PRD
     steps:
     - name:  test zrq env
       run: echo ${{ secrets.TESTZRQ }}
