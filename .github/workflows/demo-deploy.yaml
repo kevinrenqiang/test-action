@@ -10,4 +10,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name:  test zrq env
-      run: echo ${{ secrets.TESTZRQ }} && echo ${{ secrets.ZRQ }}
+      run:  echo ${{ secrets.ZRQ }}
