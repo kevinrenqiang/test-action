@@ -12,4 +12,4 @@ jobs:
       name: NO-PRD
     steps:
     - name:  test zrq env
-      run: echo ${{ secrets.TESTZRQ }}
+      run: echo ${{ secrets.TESTZRQ }} && echo ${{ secrets.ZRQ }}
