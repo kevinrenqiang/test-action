@@ -6,7 +6,7 @@ on:
 
 env:
   REGION_ID: cn-chengdu
-    REGISTRY: registry.cn-chengdu.aliyuncs.com
+  REGISTRY: registry.cn-chengdu.aliyuncs.com
 
 jobs:
   build:
