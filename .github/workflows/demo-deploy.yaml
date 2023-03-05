@@ -1,24 +1,22 @@
-name: Run Azure Login with OpenID Connect
-on: [push]
+name: Build and Deploy to ACK
 
-#
-permissions:
-      id-token: write
-      contents: read
-      
-jobs: 
-  build-and-deploy:
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
     runs-on: ubuntu-latest
+
     steps:
-    - name: 'Az CLI login'
-      uses: azure/login@v1
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    # 1.1 Login to ACR
+    - name: Login to ACR with the AccessKey pair
+      uses: aliyun/acr-login@v1
       with:
-          client-id: ${{ secrets.AZURE_CLIENT_ID }}
-          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
-          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-  
-    - name: 'Run Azure CLI commands'
-      run: |
-          az account show
-          az group list
-          pwd
+        region-id: "${{ env.REGION_ID }}"
+        access-key-id: "${{ secrets.ACCESS_KEY_ID }}"
+        access-key-secret: "${{ secrets.ACCESS_KEY_SECRET }}"
+
