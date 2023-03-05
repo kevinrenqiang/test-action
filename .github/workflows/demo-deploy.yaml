@@ -4,6 +4,9 @@ on:
   push:
     branches: [ "main" ]
 
+env:
+  REGION_ID: cn-chengdu
+
 jobs:
   build:
     runs-on: ubuntu-latest
