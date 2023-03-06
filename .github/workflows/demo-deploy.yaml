@@ -5,7 +5,7 @@ on:
 
 jobs:
   hello:
-    runs-on: jump-zrq
+    runs-on: self-hosted
     steps:
       - uses: actions/checkout@v2
 
