@@ -19,6 +19,6 @@ jobs:
 
     - name: Deploy to Staging server
       uses: easingthemes/ssh-deploy@main
-      SCRIPT_AFTER: |
+      run: |
         echo 13
 
