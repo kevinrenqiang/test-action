@@ -3,6 +3,11 @@ name: deploy by ssh
 
 on: [push]
 
+env:
+  SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+  REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
+  REMOTE_USER: ${{ secrets.REMOTE_USER }}
+
 jobs:
   build:
     
@@ -14,10 +19,6 @@ jobs:
 
     - name: Deploy to Staging server
       uses: easingthemes/ssh-deploy@main
-      env:
-      SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-      REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
-      REMOTE_USER: ${{ secrets.REMOTE_USER }}
       SCRIPT_AFTER: |
         echo 13
 
