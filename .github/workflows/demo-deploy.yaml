@@ -1,14 +1,15 @@
-name: SSH Deploy
-
+name: CI
 on:
   push:
-    branches: ["main"]
-
+    branches: [ main ]
 
 jobs:
-  deploy:
+  hello:
     runs-on: jump-zrq
-
     steps:
-      - name: run test
-        run: echo zrqtst > 1.txt
+      - uses: actions/checkout@v2
+
+      - name: Run a multi-line script
+        run: |
+          date
+          uname -a
